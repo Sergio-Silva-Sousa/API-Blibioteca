@@ -13,3 +13,4 @@ db_url = os.getenv("URL_DATABASE")
 app.config["SQLALCHEMY_DATABASE_URI"] =  db_url
 db.init_app(app)
 migrate = Migrate(app,db)
+
