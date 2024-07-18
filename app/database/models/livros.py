@@ -16,3 +16,4 @@ class Livro(db.Model):
   #idade_minima = db.Column(db.Integer,nullable=False)
   #quantidade = db.Column(db.Integer,nullable=False)
   
+
