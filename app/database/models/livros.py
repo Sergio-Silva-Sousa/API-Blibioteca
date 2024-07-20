@@ -16,4 +16,24 @@ class Livro(db.Model):
   #idade_minima = db.Column(db.Integer,nullable=False)
   #quantidade = db.Column(db.Integer,nullable=False)
   
-
+  @classmethod
+  def ache_pelo_id(cls,id):
+    return cls.query.filter_by(id=id).first()
+    
+  @classmethod
+  def pegue_todos(cls):
+    return cls.query.all()
+    
+  def adicionar_db(self):
+    db.session.add(self)
+    db.session.commit()
+    
+  def remover_db(self):
+    db.session.delete(self)
+    db.session.commit()
+    
+  def editar(self,args):
+    for chave, item in args.items():
+      setattr(self,chave,item)
+    db.session.commit()
+  
